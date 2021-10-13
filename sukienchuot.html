@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="myImage" src="./anh-gif-1-min.gif" width="300">
+    <p>Click de duoc nhap em</p>
+    <input type="button" value="bam vao day" onclick="moveRight()"/>
+</form>
+<script>
+    let imgGif = null;
+    imgGif = document.getElementById('myImage');
+    function init() {
+        imgGif = document.getElementById('myImage');
+        imgGif.style.position = 'relative' ;
+        imgGif.style.left = '2px' ;
+    }
+    function moveRight() {
+        imgGif.style.left = parseInt(imgGif.style.left) + 15 + 'px';
+    }
+    window.onload = init ;
+</script>
+</body>
+</html>
