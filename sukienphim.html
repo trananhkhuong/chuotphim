@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img id="oiGai" src="./hinh-anh-hai-huoc-nhat-20-1.jpg" style="position:absolute;left: 0;top: 0;" width="150" height="200">
+<script>
+    function upArrowPressed() {
+        let element = document.getElementById("oiGai");
+        element.style.top = parseInt(element.style.top) -5 +'px';
+    }
+    function downArrowPassed() {
+        var element = document.getElementById("oiGai");
+        element.style.top = parseInt(element.style.top) +5 + 'px';
+    }
+    function rightArrowPassed() {
+        var element = document.getElementById("oiGai");
+        element.style.left = parseInt(element.style.left)  +5 + 'px';
+    }
+    function leftArrowPassed() {
+        var element = document.getElementById("oiGai");
+        element.style.left = parseInt(element.style.left) -5 + 'px';
+    }
+    function  moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPassed();
+                break;
+            case 39:
+                rightArrowPassed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPassed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>
